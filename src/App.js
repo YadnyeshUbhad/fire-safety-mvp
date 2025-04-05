@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
+import Navbar from "./components/Navbar";
+import Quiz from "./components/Quiz";
+import Simulation from "./components/Simulation";
+import ManagerDashboard from "./components/ManagerDashboard";
+import VoiceAssistant from "./components/VoiceAssistant";
+import Leaderboard from "./components/Leaderboard";
+import Badges from "./components/Badges";
+const userName = "neoGenesis_user"; // or get from state/context
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <div className="container">
+        <h1>Fire Safety Training Platform</h1>
+        <Quiz />
+        <Simulation />
+        <ManagerDashboard />
+        <VoiceAssistant />
+        <Badges userName={userName} />
+        <Leaderboard />
+      </div>
     </div>
   );
 }
